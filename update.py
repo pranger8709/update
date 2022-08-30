@@ -1,20 +1,34 @@
 from git import Repo
+from colored import fg
+
+success = fg('green')
+error = fg('red')
+projects = ''
 
 def main():
-    f = open('projects.txt')
-    help = f.read()
-    f.close()
-    print(help)
-    help = help.split(",")
-    print(help)
-    # Repo.git.pull
-    repo = Repo('/Users/tylerpranger/Documents/htdocs/update_projects')
-    origin = repo.remotes.origin
-    origin.pull()
-    # repo.git.pull
-    # repo.git.checkout('main')
-    # repo.git.commit('testing commit')
-    print('hello 1')
+    getProjects()
+    print(projects)
+    gitPull('main')
 
+def getProjects():
+    f = open('projects.txt')
+    global projects
+    projects = f.read()
+    f.close()
+    projects = projects.split(",")
+
+def gitPull(branch):
+    for i in projects:
+        print(i)
+        print_s('Doing pulls on ' + i)
+        repo = Repo(i)
+        origin = repo.remotes.origin
+        origin.pull()
+
+def print_s(str):
+    print(success + str)
+
+def print_e(str):
+    print(error + str)
 
 main()
