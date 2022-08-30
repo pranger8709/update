@@ -14,6 +14,7 @@ def main():
     # repo.git.pull
     # repo.git.checkout('main')
     # repo.git.commit('testing commit')
+    print('hello')
 
 
 main()
