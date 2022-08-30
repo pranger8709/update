@@ -10,7 +10,7 @@ def main():
     # Repo.git.pull
     repo = Repo('/Users/tylerpranger/Documents/htdocs/update_projects')
     origin = repo.remotes.origin
-    origin.pull
+    origin.pull()
     # repo.git.pull
     # repo.git.checkout('main')
     # repo.git.commit('testing commit')
