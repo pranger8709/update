@@ -9,6 +9,7 @@ def main():
     getProjects()
     print(projects)
     gitPull('main')
+    print('ha')
 
 def getProjects():
     f = open('projects.txt')
