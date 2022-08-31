@@ -16,7 +16,7 @@ def getProjects():
     global projects
     projects = f.read()
     f.close()
-    projects = projects.split(",")
+    projects = projects.split(",") #Convert the string into an array
 
 def gitPull(branch):
     for i in projects:
